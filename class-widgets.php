@@ -3,7 +3,7 @@
  * Widgets class.
  *
  * @category   Class
- * @package    ElementorLocationslist
+ * @package    ElementorCustomform
  * @subpackage WordPress
  * @author     Aleksander Cieśla <aleksander.ciesla@protonmail.com>
  * @copyright  2020 Aleksander Cieśla
@@ -14,7 +14,7 @@
  * php version 7.3.9
  */
 
-namespace ElementorLocationslist;
+namespace ElementorCustomform;
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
@@ -66,7 +66,7 @@ class Widgets {
 	 * @access private
 	 */
 	private function include_widgets_files() {
-		require_once 'widgets/class-locationslist.php';
+		require_once 'widgets/class-customform.php';
 	}
 
 	/**
@@ -82,7 +82,12 @@ class Widgets {
 		$this->include_widgets_files();
 
 		// Register the plugin widget classes.
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Locationslist() );
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Customform() );
+	}
+	
+
+	public function widget_scripts() {
+		wp_register_script( 'elementor-customform', plugins_url( '/assets/js/customform.js', ELEMENTOR_CUSTOMFORM ), array(), '1.0.0' );
 	}
 
 	/**

@@ -1,9 +1,9 @@
 <?php
 /**
- * Elementor_Locationslist class.
+ * Elementor_Customform class.
  *
  * @category   Class
- * @package    ElementorLocationslist
+ * @package    ElementorCustomForm
  * @subpackage WordPress
  * @author     Aleksander Cieśla <aleksander.ciesla@protonmail.com>
  * @copyright  2021 Aleksadner Cieśla
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-final class Elementor_Locationslist {
+final class Elementor_Customform {
 
 	/**
 	 * Plugin Version
@@ -68,7 +68,7 @@ final class Elementor_Locationslist {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'elementor-Locationslist' );
+		load_plugin_textdomain( 'elementor-Customform' );
 	}
 
 	/**
@@ -116,7 +116,7 @@ final class Elementor_Locationslist {
 	 * @access public
 	 */
 	public function admin_notice_missing_main_plugin() {
-		deactivate_plugins( plugin_basename( ELEMENTOR_LOCATIONSLIST ) );
+		deactivate_plugins( plugin_basename( ELEMENTOR_CUSTOMFORM ) );
 
 		return sprintf(
 			wp_kses(
@@ -129,7 +129,7 @@ final class Elementor_Locationslist {
 					),
 				)
 			),
-			'Elementor Locationslist',
+			'Elementor CustomForm',
 			'Elementor'
 		);
 	}
@@ -143,7 +143,7 @@ final class Elementor_Locationslist {
 	 * @access public
 	 */
 	public function admin_notice_minimum_elementor_version() {
-		deactivate_plugins( plugin_basename( ELEMENTOR_LOCATIONSLIST ) );
+		deactivate_plugins( plugin_basename( ELEMENTOR_CUSTOMFORM ) );
 
 		return sprintf(
 			wp_kses(
@@ -156,7 +156,7 @@ final class Elementor_Locationslist {
 					),
 				)
 			),
-			'Elementor Locationslist',
+			'Elementor CustomForm',
 			'Elementor',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
@@ -171,7 +171,7 @@ final class Elementor_Locationslist {
 	 * @access public
 	 */
 	public function admin_notice_minimum_php_version() {
-		deactivate_plugins( plugin_basename( ELEMENTOR_LOCATIONSLIST ) );
+		deactivate_plugins( plugin_basename( ELEMENTOR_CUSTOMFORM ) );
 
 		return sprintf(
 			wp_kses(
@@ -184,12 +184,12 @@ final class Elementor_Locationslist {
 					),
 				)
 			),
-			'Elementor Locationslist',
+			'Elementor Customform',
 			'Elementor',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 	}
 }
 
-// Instantiate Elementor_Locationslist.
-new Elementor_Locationslist();
+// Instantiate Elementor_Customform.
+new Elementor_Customform();
